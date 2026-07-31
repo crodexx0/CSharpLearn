@@ -40,4 +40,7 @@ Console.WriteLine($"Coin Toss Result: {(coin.Next(2) == 1 ? "Heads" : "Tails")}"
 
 string permission = "Admin|Manager";
 int level = 20;
-Console.WriteLine((permission.Contains("Admin") && level > 55) ? "Welcome, Super Admin user." : (permission.Contains("Admin") && level <= 55) ? "Welcome, Admin user." : (permission.Contains("Manager") && level >= 20) ? "Contact an Admin for access." : (permission.Contains("Manager") && level < 20) ? "You do not have sufficient privileges." : "You do not have sufficient privileges.");
+Console.WriteLine((permission.Contains("Admin") && level > 55) ? "Welcome, Super Admin user." : 
+                  (permission.Contains("Admin") && level <= 55) ? "Welcome, Admin user." : 
+                  (permission.Contains("Manager") && level >= 20) ? "Contact an Admin for access." : 
+                  (permission.Contains("Manager") && level < 20) ? "You do not have sufficient privileges." : "You do not have sufficient privileges.");
