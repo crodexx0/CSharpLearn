@@ -33,6 +33,7 @@ int[] studentScores = new int[10];
 string currentStudentLetterGrade = "";
 
 // display the header row for scores/grades
+Console.Clear();
 Console.WriteLine("Student\t\tGrade\n");
 
 /*
