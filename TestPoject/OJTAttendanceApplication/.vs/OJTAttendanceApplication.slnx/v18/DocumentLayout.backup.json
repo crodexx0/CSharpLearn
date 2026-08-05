@@ -1,0 +1,123 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|c:\\users\\ojt\\desktop\\learningcsharp\\testpoject\\ojtattendanceapplication\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|c:\\users\\ojt\\desktop\\learningcsharp\\testpoject\\ojtattendanceapplication\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|solutionrelative:Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|solutionrelative:App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{9D37A02E-78B9-4B96-AA5D-2147D4437DC8}|OJTAttendanceApplication.csproj|solutionrelative:Form1.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.cs [Design]*",
+              "RelativeToolTip": "Form1.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T22:59:22.315Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T22:53:45.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-08-03T22:53:38.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.Designer.cs*",
+              "RelativeToolTip": "Form1.Designer.cs*",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAADkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T22:31:56.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.resx",
+              "DocumentMoniker": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.resx",
+              "RelativeDocumentMoniker": "Form1.resx",
+              "ToolTip": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.resx*",
+              "RelativeToolTip": "Form1.resx*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-08-03T22:31:56.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\OJT\\Desktop\\LearningCSharp\\TestPoject\\OJTAttendanceApplication\\Form1.cs*",
+              "RelativeToolTip": "Form1.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAvwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T02:15:44.144Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
