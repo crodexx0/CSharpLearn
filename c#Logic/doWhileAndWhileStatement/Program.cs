@@ -125,10 +125,13 @@ do
 } while (isValidInput == false);
 
 Console.WriteLine($"Your input value ({userInputValue}) has been accepted.");
+
+// The code above validates user input for an integer value between 5 and 10. It uses a do-while loop to repeatedly prompt the user until valid input is received, checking if the input can be parsed as an integer and if it falls within the specified range.
 */
 
 
 
+/*
 // Project 2: validate string input
 string? userInput;
 bool isValidInput = false;
@@ -155,3 +158,49 @@ do
         Console.WriteLine("Sorry, you have entered an invalid role. Please try again.");
     
 } while (isValidInput == false);
+
+// The code above validates user input for a role name, ensuring that the input is one of the specified valid roles. It uses a do-while loop to repeatedly prompt the user until valid input is received, trimming whitespace and converting the input to lowercase for comparison.
+*/
+
+
+
+// Project 3: processes the contents of a string array
+
+string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
+int periodLocation = 0;
+
+for (int i = 0; i < myStrings.Length; i++)
+{
+    string myString = myStrings[i];
+
+    periodLocation = myString.IndexOf('.'); 
+    // IndexOf() method returns the index of the first occurrence of a specified character or string within the current string.
+
+
+    if (periodLocation > 0)
+    {
+        do
+        {
+            
+            string outputString = myString.Substring(0, periodLocation + 1); 
+            // Substring() method retrieves a substring from the current string. It uses two parameters, the starting index and the length of the substring.
+            outputString = outputString.Trim('.', ' '); 
+            // Trim() method removes all leading and trailing white-space characters from the current string.
+            Console.WriteLine(outputString);
+            myString = myString.Remove(0, periodLocation + 1);
+            // Remove() method removes a specified number of characters from the current string, starting at a specified index.
+            periodLocation = myString.IndexOf('.');
+
+            if (periodLocation < 0 && myString.Length > 0)
+            {
+                Console.WriteLine(myString.Trim());
+            }
+
+        } while (periodLocation > 0);
+    } else
+    {
+        Console.WriteLine(myString);
+    }
+}
+
+// The code above processes the contents of a string array, splitting each string into sentences based on the period character. It uses a for loop to iterate through each string in the array and a do-while loop to extract and print each sentence until there are no more periods left in the string. If there are no periods, it simply prints the entire string.
