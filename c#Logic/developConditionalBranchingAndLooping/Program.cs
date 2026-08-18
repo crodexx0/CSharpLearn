@@ -99,6 +99,7 @@ do
 
 Console.WriteLine($"You selected menu option {menuSelection}.");
 
+bool validEntry = false;
 
 switch (menuSelection)
 {
@@ -121,7 +122,6 @@ switch (menuSelection)
     string anotherPet = "y";
     int petCount = 0;
 
-
     for (int i = 0; i < maxPets; i++)
     {
       if (ourAnimals[i, 0] != "ID #: ")
@@ -133,7 +133,6 @@ switch (menuSelection)
 
     while (anotherPet == "y" && petCount < maxPets)
     {
-      bool validEntry = false;
 
       // Prompt for the pet's species, which must be dog or cat
       do
@@ -261,11 +260,114 @@ switch (menuSelection)
     break;
   case "3":
     // Ensure animal ages and physical descriptions are complete
-    Console.WriteLine("Challenge Project - please check back soon to see progress.");
+    for (int i = 0; i < maxPets; i++)
+    {
+      if (ourAnimals[i, 0] != "ID #: ")
+      {
+        if (ourAnimals[i, 2] == "Age: " || ourAnimals[i, 2] == "Age: ?")
+        {
+          do
+          {
+            int petAge;
+
+            Console.WriteLine($"Enter an age for ID #: {ourAnimals[i, 0].Substring(6)}");
+            readResult = Console.ReadLine();
+
+            if (readResult != null)
+            {
+              animalAge = readResult;
+
+              validEntry = int.TryParse(animalAge, out petAge);
+
+              ourAnimals[i, 2] = "Age: " + petAge;
+            }
+
+          } while (validEntry == false);
+        }
+        if (ourAnimals[i, 4] == "Physical description: " || ourAnimals[i, 4] == "Physical description: tbd")
+        {
+          do
+          {
+            Console.WriteLine($"Enter a physical description for ID #: {ourAnimals[i, 0].Substring(6)} (size, color, gender, weight, housebroken)");
+            readResult = Console.ReadLine();
+
+            if (readResult != null)
+            {
+              animalPhysicalDescription = readResult;
+
+              if (animalPhysicalDescription == "")
+              {
+                validEntry = false;
+              } else
+              {
+                validEntry = true;
+              }
+
+              ourAnimals[i, 4] = "Physical description: " + animalPhysicalDescription;
+            }
+          } while (validEntry == false);
+        }
+      }
+    }
+
+    Console.WriteLine("Age and physical description fields are complete for all of our friends.");
     break;
   case "4":
     // Ensure animal nicknames and personality descriptions are complete
-    Console.WriteLine("Challenge Project - please check back soon to see progress.");
+    for (int i = 0; i < maxPets; i++)
+    {
+      if (ourAnimals[i, 0] != "ID #: ")
+      {
+        if (ourAnimals[i, 3] == "Nickname: " || ourAnimals[i, 3] == "Nickname: tbd")
+        {
+          do
+          {
+            Console.WriteLine($"Enter a nickname for ID #: {ourAnimals[i, 0].Substring(6)}");
+            readResult = Console.ReadLine();
+
+            if (readResult != null)
+            {
+              animalNickname = readResult;
+
+              if (animalNickname == "")
+              {
+                validEntry = false;
+              } else
+              {
+                validEntry = true;
+              }
+
+              ourAnimals[i, 3] = "Nickname: " + animalNickname;
+            }
+          } while (validEntry == false);
+        }
+        if (ourAnimals[i, 5] == "Personality: " || ourAnimals[i, 5] == "Personality: tbd")
+        {
+          do
+          {
+            Console.WriteLine($"Enter a personality description for ID #: {ourAnimals[i, 0].Substring(6)} (likes or dislikes, tricks, energy level)");
+            readResult = Console.ReadLine();
+
+            if (readResult != null)
+            {
+              animalPersonalityDescription = readResult;
+
+              if (animalPersonalityDescription == "")
+              {
+                validEntry = false;
+              } else
+              {
+                validEntry = true;
+              }
+
+              ourAnimals[i, 5] = "Personality: " + animalPersonalityDescription;
+            }
+          } while (validEntry == false);
+        }
+      }
+    }
+
+    
     break;
   case "5":
     // Edit an animal’s age
