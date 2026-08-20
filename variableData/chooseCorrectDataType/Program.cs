@@ -1,126 +1,171 @@
-﻿Console.WriteLine("Signed integral types:");
+﻿// ==========================================
+// C# DATA TYPES & MEMORY MANAGEMENT GUIDE
+// ==========================================
+// This program demonstrates the properties of various C# data types,
+// explains Value Types vs. Reference Types, and illustrates Stack vs. Heap memory allocation.
 
-// sbyte: 8-bit signed integer
+// ------------------------------------------
+// SECTION 1: INTEGRAL TYPES (INTEGERS)
+// ------------------------------------------
+
+Console.WriteLine("==================================================");
+Console.WriteLine("SIGNED INTEGRAL TYPES");
+Console.WriteLine("==================================================");
+// Signed integral types can represent both positive and negative values.
+// They use the most significant bit (MSB) as a sign bit, which halves the maximum positive range
+// compared to their unsigned counterparts of the same bit-width.
+
+// sbyte: 8-bit signed integer (Range: -128 to 127)
 Console.WriteLine($"sbyte  : {sbyte.MinValue} to {sbyte.MaxValue}");
-// short: 16-bit signed integer
+
+// short: 16-bit signed integer (Range: -32,768 to 32,767)
 Console.WriteLine($"short  : {short.MinValue} to {short.MaxValue}");
-// int: 32-bit signed integer
+
+// int: 32-bit signed integer (Range: -2,147,483,648 to 2,147,483,647) - The default integer type in C#
 Console.WriteLine($"int    : {int.MinValue} to {int.MaxValue}");
-// long: 64-bit signed integer
+
+// long: 64-bit signed integer (Range: ~-9 Quintillion to ~9 Quintillion)
 Console.WriteLine($"long   : {long.MinValue} to {long.MaxValue}");
 
+Console.WriteLine();
 
-Console.WriteLine("");
+Console.WriteLine("==================================================");
+Console.WriteLine("UNSIGNED INTEGRAL TYPES");
+Console.WriteLine("==================================================");
+// Unsigned integral types can only represent non-negative values (0 and positive numbers).
+// Since no bit is reserved for the sign (+/-), the entire bit-width is used for the value,
+// doubling the positive upper limit compared to the corresponding signed type.
 
-
-Console.WriteLine("Unsigned integral types:");
-
-// byte: 8-bit unsigned integer
+// byte: 8-bit unsigned integer (Range: 0 to 255)
 Console.WriteLine($"byte   : {byte.MinValue} to {byte.MaxValue}");
-// ushort: 16-bit unsigned integer
+
+// ushort: 16-bit unsigned integer (Range: 0 to 65,535)
 Console.WriteLine($"ushort : {ushort.MinValue} to {ushort.MaxValue}");
-// uint: 32-bit unsigned integer
+
+// uint: 32-bit unsigned integer (Range: 0 to 4,294,967,295)
 Console.WriteLine($"uint   : {uint.MinValue} to {uint.MaxValue}");
-// ulong: 64-bit unsigned integer
+
+// ulong: 64-bit unsigned integer (Range: 0 to ~18 Quintillion)
 Console.WriteLine($"ulong  : {ulong.MinValue} to {ulong.MaxValue}");
 
-// Signed integral types can represent both positive and negative values, while unsigned integral types can only represent non-negative values (zero and positive numbers). This means that signed types have a smaller range of positive values compared to their unsigned counterparts, as they need to allocate some of their range for negative numbers.
+Console.WriteLine();
 
+// ------------------------------------------
+// SECTION 2: FLOATING POINT TYPES (DECIMALS)
+// ------------------------------------------
 
+Console.WriteLine("==================================================");
+Console.WriteLine("FLOATING POINT TYPES");
+Console.WriteLine("==================================================");
+// Floating point types represent numbers with fractional components. 
+// They differ in precision (number of significant digits they can accurately hold) and storage size.
 
-Console.WriteLine("");
-
-
-Console.WriteLine("Floating point types:");
-
-// float: 32-bit single-precision floating point
+// float: 32-bit single-precision floating point. Best for graphics, physics, or game engines where speed is prioritized over extreme precision.
+// Has ~6-9 digits of precision. Uses the 'f' suffix in literals (e.g., 3.14f).
 Console.WriteLine($"float  : {float.MinValue} to {float.MaxValue} (with ~6-9 digits of precision)");
-// double: 64-bit double-precision floating point
+
+// double: 64-bit double-precision floating point. The default literal type for fractional numbers.
+// Has ~15-17 digits of precision. Best for general-purpose scientific calculations.
 Console.WriteLine($"double : {double.MinValue} to {double.MaxValue} (with ~15-17 digits of precision)");
-// decimal: 128-bit decimal floating point
+
+// decimal: 128-bit decimal floating point. High-precision financial and monetary calculations.
+// Has 28-29 digits of precision. Virtually eliminates rounding errors common in float/double.
+// Uses the 'm' suffix in literals (e.g., 99.99m).
 Console.WriteLine($"decimal: {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precision)");
 
-// "E notation" is a form of scientific notation that means "times 10 raised to the power of."
-// Value like 5E+2 = 5 x 10^2 = 500
+Console.WriteLine();
 
+// NOTE ON SCIENTIFIC NOTATION (E NOTATION):
+// "E notation" stands for "times 10 raised to the power of."
+// For example: 5E+2 means 5 * 10^2 = 5 * 100 = 500.
+// Similarly, -3.4E+38 means -3.4 * 10^38.
 
+// ------------------------------------------
+// SECTION 3: VALUE TYPES & STACK MEMORY
+// ------------------------------------------
 
-// A value type variable stores its values directly in an area of storage called the STACK.
-// The stack is memory allocated to the code that is currently running on the CPU (also known as the stack frame, or activation frame).
-// When the stack frame has finished executing, the values in the stack are removed.
+Console.WriteLine("==================================================");
+Console.WriteLine("VALUE TYPES AND THE STACK");
+Console.WriteLine("==================================================");
+// Value types store their values directly in an area of high-speed memory called the STACK.
+// The stack is allocated for the current thread/method execution frame (activation record).
+// When the execution goes out of scope (e.g., method exits), stack memory is automatically and instantly reclaimed.
 
-// VALUE TYPE
-int val_A = 2;
-int val_B = val_A;
-val_B = 5;
+// Let's demonstrate Value Type copy behavior:
+int val_A = 2;       // Allocates space on the stack for val_A and stores '2'
+int val_B = val_A;   // Allocates space on the stack for val_B and COPIES the value of val_A ('2') into it
+val_B = 5;           // Changes the value inside val_B's stack allocation to '5'
 
 Console.WriteLine("--Value Types--");
-Console.WriteLine($"val_A: {val_A}");
-Console.WriteLine($"val_B: {val_B}");
-// When val_B = val_A is executed, the value of val_A is copied and stored in val_B.
-// So, when val_B is changed, val_A remains unaffected.
+Console.WriteLine($"val_A (Expected: 2): {val_A}");
+Console.WriteLine($"val_B (Expected: 5): {val_B}");
+// EXPLANATION: Since val_B holds an independent copy, modifying val_B has absolutely no effect on val_A.
 
+Console.WriteLine();
 
+// ------------------------------------------
+// SECTION 4: REFERENCE TYPES & HEAP MEMORY
+// ------------------------------------------
 
-// A reference type variable stores its values in a separate memory region called the HEAP.
-// The heap is a memory area that is shared across many applications running on the operating system at the same time.
-// The .NET Runtime communicates with the operating system to determine what memory addresses are available, and requests an address where it can store the value.
-// The .NET Runtime stores the value, and then returns the memory address to the variable.
-// When your code uses the variable, the .NET Runtime seamlessly looks up the address stored in the variable, and retrieves the value that's stored there.
+Console.WriteLine("==================================================");
+Console.WriteLine("REFERENCE TYPES AND THE HEAP");
+Console.WriteLine("==================================================");
+// Reference types store a memory address (a reference) on the stack, which points to the actual data stored in the HEAP.
+// The heap is a larger, shared pool of memory managed by the .NET Garbage Collector (GC).
+// Heap access is slightly slower than stack access because of the indirection (pointer lookup).
 
-int[] data;
-// At this point, data is merely a variable that could hold a reference, or rather, a memory address of a value in the heap. Because it's not pointing to a memory address, it's called a null reference.
-data = new int[3];
-// The new keyword informs .NET Runtime to create an instance of int array, and then coordinate with the operating system to store the array sized for three int values in memory.
-// The .NET Runtime complies, and returns a memory address of the new int array.
-// Finally, the memory address is stored in the variable data.
-// The int array is now a reference type, and the variable data is a reference to that array in the heap.
+// 1. Array Example:
+int[] data; // Declares a reference variable on the STACK. At this point, it is 'null' (doesn't point to any address yet).
 
+data = new int[3]; 
+// The 'new' keyword requests the .NET Runtime to allocate memory on the HEAP for an array of 3 integers.
+// The runtime allocates the memory and returns its starting address.
+// This memory address is then stored in the 'data' variable on the stack.
+
+// 2. String Example:
 string shortenedString = "Hello World!";
-Console.WriteLine(shortenedString);
-// The string data type is also a reference type.
-// So why a new operator wasn't used when declaring a string.
-// This is purely a convenience afforded by the designers of C#. Because the string data type is used so frequently, the designers of C# wanted to make it easier to create string values without having to use the new operator.
-// Behind the scenes, however, a new instance of System.String is created and initialized to "Hello World!".
+Console.WriteLine($"shortenedString: {shortenedString}");
+// Strings are reference types, but we didn't use the 'new' keyword here.
+// This is a language design convenience (syntactic sugar) in C#.
+// Under the hood, the C# compiler allocates a System.String object on the heap and points 'shortenedString' to it.
 
-// REFERENCE TYPE
-int[] ref_A= new int[1];
-ref_A[0] = 2;
-int[] ref_B = ref_A;
-ref_B[0] = 5;
+// 3. Demonstrating Reference Type copy behavior:
+int[] ref_A = new int[1]; // Allocates a 1-element int array on the heap; ref_A stores its memory address
+ref_A[0] = 2;             // Stores '2' at the heap address pointed to by ref_A
+
+int[] ref_B = ref_A;      // COPIES the memory address (reference) from ref_A to ref_B. Both variables now point to the EXACT same heap address!
+ref_B[0] = 5;             // Changes the value at that shared heap address to '5'
 
 Console.WriteLine("--Reference Types--");
-Console.WriteLine($"ref_A[0]: {ref_A[0]}");
-Console.WriteLine($"ref_B[0]: {ref_B[0]}");
-// When ref_B = ref_A is executed, ref_B points to the same memory location as ref_A.
-// So, when ref_B[0] is changed, ref_A[0] also changes because they both point to the same memory location.
+Console.WriteLine($"ref_A[0] (Expected: 5): {ref_A[0]}");
+Console.WriteLine($"ref_B[0] (Expected: 5): {ref_B[0]}");
+// EXPLANATION: Because ref_A and ref_B reference the same heap location, altering the heap data through ref_B affects ref_A as well.
 
+Console.WriteLine();
 
-// CHOOSE THE RIGHT DATA TYPE
-
-/* 
-Suppose your variable should only store a number between 1 and 10,000
-  - you would likely avoid BYTE and SBYTE since their ranges are too low.
-  - you would likely not need INT, LONG, UINT, and ULONG because they can store more data than necessary
-  - you would probably skip FLOAT, DOUBLE, and DECIMAL if you didn't need fractional values.
-  - you might narrow it down to SHORT and USHORT, of which both may be viable.
-  - If you're confident that a negative value would have no meaning in your application, you might choose USHORT
-  - Now, any value assigned to a variable of type ushort outside of the boundary of 0 to 65535 would throw an exception, which is a good thing because it would prevent your application from storing an invalid value.
-*/
-
-/*
-Suppose you want to work with a span of years between two dates. Since the application is a business application, you might determine that you only need a range from about 1960 to 2200.
-  - you might think to try to work with BYTE since it can represent numbers between 0 and 255.
-  - however, when you look at the built-in methods on the System.TimeSpan and System.DateTime classes, you realize they mostly accept values of type DOUBLE and INT.
-  - if you choose SBYTE, you'll constantly be converting back and forth between BYTE and DOUBLE or INT.
-  - In this case, it might make more sense to choose int if you don't need subsecond precision, and double if you do need subsecond precision.
-*/
+// ------------------------------------------
+// SECTION 5: HOW TO CHOOSE THE RIGHT DATA TYPE
+// ------------------------------------------
 
 /* 
-Choose data types based on impact to other systems
-  - Sometimes, you must consider how the information will be consumed by other applications or other systems like a database.
-  - For example, SQL Server's type system is different from C#'s type system.
-  - As a result, some mapping between the two must happen before you can save data into that database.
-  - If your application's purpose is to interface with a database, then you would likely need to consider how the data is stored and how much data is stored.
-  - The choice of a larger data type might impact the amount (and cost) of the physical storage required to store all the data your application will generate.
+GUIDELINE A: Choose by Range and Storage Efficiency
+Suppose your variable only needs to store integer values between 1 and 10,000:
+  - Avoid byte/sbyte: Their maximum capacities (255/127) are too low.
+  - Avoid int, long, uint, ulong: They are 32-bit or 64-bit and allocate far more memory than necessary (oversized).
+  - Avoid float, double, decimal: These represent fractions and introduce unnecessary floating-point CPU overhead.
+  - Choose short or ushort (16-bit): Both cover 10,000. If negative values are logically impossible/invalid,
+    choose ushort (0 to 65,535). Assigning an out-of-range value will trigger an exception, acting as an implicit validation guard!
+
+GUIDELINE B: Choose by System Interoperability
+Suppose you are tracking years (e.g., 1960 to 2200):
+  - Structurally, 'byte' can't fit 1960+, but 'short' or 'ushort' fits easily.
+  - However, standard library classes like TimeSpan and DateTime primarily accept 'int' or 'double' arguments in their methods.
+  - If you choose 'short', you will constantly have to cast (convert) values back and forth, cluttering code and hurting performance.
+  - In this scenario, choosing 'int' is best for clean integration, and 'double' if you need sub-second precision.
+
+GUIDELINE C: Choose by Physical Database/API Constraints
+When persisting data to a storage medium or communicating over a network (e.g., JSON, SQL database, cloud API):
+  - Consider the target system's datatype mapping. SQL Server's types differ from C#'s.
+  - Unnecessarily large datatypes (like using ulong/long when short would suffice) scale poorly.
+  - Across millions of database rows, selecting an optimized data type can save gigabytes of physical storage, improve index search performance, and reduce cloud infrastructure costs.
 */
