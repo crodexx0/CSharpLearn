@@ -189,7 +189,16 @@ foreach (string item in items)
 
 
 
-// Exercise: Complete a challenge to reverse words in a sentence
+/*
+  This code group demonstrates a challenge to reverse each word of a sentence individually while keeping the word order the same:
+  1. Splitting the sentence into an array of words using space as a separator.
+  2. Declaring a new array of strings to hold the reversed words.
+  3. Iterating through each word, converting it to a character array, reversing the characters, and creating a new string representing the reversed word.
+  4. Joining the reversed words back with space separators and printing the result.
+
+  Expected Output:
+  ehT kciuq nworb xof spmuj revo eht yzal god
+*/
 string pangram = "The quick brown fox jumps over the lazy dog";
 string[] pangramWords = pangram.Split(' ');
 string[] reversedPangramWords = new string[pangramWords.Length];
@@ -204,7 +213,23 @@ Console.WriteLine(String.Join(" ", reversedPangramWords));
 
 
 
-// Exercise: Complete a challenge to parse a string of orders, sort the orders and tag possible errors
+/*
+  This code group demonstrates parsing, sorting, and tagging errors in a comma-separated stream of order IDs:
+  1. Splitting the comma-separated string of order IDs into an array using String.Split.
+  2. Sorting the array of order IDs alphabetically using Array.Sort.
+  3. Iterating through the sorted array and checking if each order ID has a length of exactly 4.
+  4. Printing the order ID, and if it does not have a length of 4, appending a "\t- Error" tag.
+
+  Expected Output:
+  A345
+  B123
+  B177
+  B179
+  C15	- Error
+  C234
+  C235
+  G3003	- Error
+*/
 string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
 string[] orders = orderStream.Split(',');
 Array.Sort(orders);
